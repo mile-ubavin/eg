@@ -10,10 +10,10 @@ describe("Disable XML template by Masteruser", () => {
     return currentLanguage === "English" ? "German" : "English";
   }
 
-  it("Diasable xml teplate by Masteruser", () => {
+  it("Disable xml template by Masteruser", () => {
     cy.loginToSupportViewMaster(); //login as a masteruser
     //get language
-    cy.get(".lagnuage-menu")
+    cy.get(".language-menu")
       .invoke("text")
       .then((selectedLanguage) => {
         const oppositeLanguage = getOppositeLanguage(selectedLanguage.trim());
@@ -149,7 +149,7 @@ describe("Disable XML template by Masteruser", () => {
           const isChecked = $checkbox.prop("checked");
 
           if (isChecked) {
-            // If checkbox is checked, perform uncjeck actions
+            // If checkbox is checked, perform uncheck actions
             cy.wrap($checkbox).invoke("click"); // click() to check the checkbox
             cy.log("Checkbox is already selected, deselect it");
             // Add your code to close the dialog or other actions
