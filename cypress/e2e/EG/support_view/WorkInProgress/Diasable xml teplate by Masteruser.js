@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe("Disable XML template by Masteruser", () => {
+describe("Disable XML template by Master-user", () => {
   // Custom command to load t based on the selected language
   Cypress.Commands.add("loadTranslate", (language) => {
     cy.fixture(`${language}.json`).as("t");
