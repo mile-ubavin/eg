@@ -1,0 +1,10 @@
+{
+  "devUrl": "https://supportviewpayslip.edeja.com/fe/login",
+
+  "username_supportViewMaster": "e-gehaltszettelMaster",
+  "password_supportViewMaster": "Test1234!",
+  "username_supportViewAdmin": "aquaAdmin",
+  "password_supportViewAdmin": "Test1234!",
+  "username_egEbox": "000_qabilly",
+  "password_egEbox": "Test1234!"
+}
