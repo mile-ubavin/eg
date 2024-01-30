@@ -13,7 +13,7 @@ describe("Disable XML template by Masteruser", () => {
   it("Disable xml template by Masteruser", () => {
     cy.loginToSupportViewMaster(); //login as a masteruser
     //get language
-    cy.get(".language-menu")
+    cy.get("#mat-select-value-1")
       .invoke("text")
       .then((selectedLanguage) => {
         const oppositeLanguage = getOppositeLanguage(selectedLanguage.trim());
