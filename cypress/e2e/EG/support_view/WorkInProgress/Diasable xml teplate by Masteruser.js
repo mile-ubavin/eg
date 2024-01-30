@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe("Disable XML template by Master-user", () => {
+describe("Disable XML template by Masteruser", () => {
   // Custom command to load t based on the selected language
   Cypress.Commands.add("loadTranslate", (language) => {
     cy.fixture(`${language}.json`).as("t");
@@ -164,7 +164,18 @@ describe("Disable XML template by Master-user", () => {
       cy.get(".pdf_dictionary>.pdf_dictionary__actions>button")
         .contains(buttonTxt)
         .click();
+      //Check validation message
+      cy.get(
+        "#mat-snack-bar-container-live-0>div>.mat-mdc-simple-snack-bar>.mat-mdc-snack-bar-label"
+      )
+        .invoke("text")
+        .then((message) => {
+          expect(message, "Success Message ").to.include(
+            t["XML template was assigned successfully"]
+          );
+        }); //end
     }); //end TRANSLATE
+    cy.wait(2500);
     // Logout;
     cy.get(".logout-icon ").click();
     cy.wait(2000);

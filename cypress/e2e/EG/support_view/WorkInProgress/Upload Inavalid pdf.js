@@ -26,9 +26,11 @@ describe("Upload Invalid file", () => {
 
         // Select the opposite language
         cy.selectLanguage(oppositeLanguage);
+        cy.wait(1500);
 
         // Load t based on the opposite language
         cy.loadTranslate(oppositeLanguage);
+        cy.wait(1500);
       });
 
     cy.get("@t").then((t) => {
@@ -39,8 +41,8 @@ describe("Upload Invalid file", () => {
         .then((uploadButtonTxt) => {
           // cy.log(`Button Text: ${uploadButtonTxt}`);
           expect(uploadButtonTxt).to.include(t["Upload Document"]);
+          // cy.log("uploadButtonTxt :", uploadButtonTxt);
         }); // end Upload document button
-
       //Click on button with txt taken from translate (Cancel)
       const uploadButton = t["Upload Document"];
       cy.get(".upload__document").contains(uploadButton).click();
